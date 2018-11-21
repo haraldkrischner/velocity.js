@@ -84,7 +84,7 @@ describe('Compile', function(){
     it('get variable form text', function(){
       var vm = 'hello $user.getName().getFullName("hanwen")'
       var data = { '$user.getName().getFullName("hanwen")': 'world' }
-      
+
       assert.equal('hello world', render(vm, data))
     })
 
@@ -249,7 +249,7 @@ describe('Compile', function(){
   describe('Literals', function(){
 
     it("eval string value", function(){
-      var vm = '#set( $directoryRoot = "www" )' + 
+      var vm = '#set( $directoryRoot = "www" )' +
                '#set( $templateName = "index.vm")' +
                '#set( $template = "$directoryRoot/$templateName" )' +
                '$template'
@@ -812,8 +812,8 @@ describe('Parser', function(){
     })
 
     it('valid variable references', function(){
-      var vm = '$mud-Slinger_1'
-      assert.equal('mud-Slinger_1', Parser.parse(vm)[0].id)
+      var vm = '$mud_Slinger_1'
+      assert.equal('mud_Slinger_1', Parser.parse(vm)[0].id)
     })
 
     it('wraped references', function(){
@@ -898,7 +898,7 @@ describe('Parser', function(){
 
       assert.equal(5, asts.length)
 
-      //asts[0].path[0] => $foo[0] 
+      //asts[0].path[0] => $foo[0]
       //{type: 'index', id: {type: 'integer', value: '0'}}
       assert.equal('index', asts[0].path[0].type)
       assert.equal('integer', asts[0].path[0].id.type)

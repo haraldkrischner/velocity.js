@@ -24,8 +24,8 @@ describe('Parser', function() {
     })
 
     it('valid variable references', function() {
-      var vm = '$mud-Slinger_1'
-      assert.equal('mud-Slinger_1', parse(vm)[0].id)
+      var vm = '$mud_Slinger_1'
+      assert.equal('mud_Slinger_1', parse(vm)[0].id)
     })
 
     it('wraped references', function() {
