@@ -129,7 +129,7 @@
 <run,c,i>"false"                     { return 'BOOL'; }
 <run,c,i>"true"                      { return 'BOOL'; }
 <h,run,c,i>[0-9]+                    { return 'INTEGER'; }
-<mu,run,c,i>[_a-zA-Z][a-zA-Z0-9_\-]* { return 'ID'; }
+<mu,run,c,i>[_a-zA-Z][a-zA-Z0-9_]* { return 'ID'; }
 <h>[_a-zA-Z][a-zA-Z0-9_\-]*[ ]*/"("  { this.begin("run"); return 'ID'; }
 <mu>"#"                              { this.begin('h'); return 'HASH'; }
 <h,run,mu>.                          { this.popState(); return 'CONTENT'; }
